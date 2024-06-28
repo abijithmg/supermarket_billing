@@ -35,7 +35,7 @@ class Checkout:
     def calculate_total(self):
         total = 0
         self.cart_items = dict(sorted(self.cart_items.items()))
-        # logger.debug("Item Dict: %s", self.cart_items)
+        logger.debug("Item Dict: %s", self.cart_items)
         for item, quantity in self.cart_items.items():
             # if item has discount price, then calculate the total price with discount
             if self.product[item]['discount_price']:
@@ -50,7 +50,7 @@ class Checkout:
         group_count = quantity // group_size
         individual_count = quantity % group_size
         result = group_count * group_price + individual_count * individual_price
-        # logger.debug(f"group_count:{group_count}, individual_count:{individual_count}, result:{result}")
+        logger.debug("group_count:{}, individual_count:{}, result:{}".format(group_count,individual_count,result))
         return result
 
 # Main function to run the program
@@ -65,4 +65,4 @@ if __name__ == "__main__":
         else:
             total_price = 0
 
-    print(f"Total price: {total_price}")
+    print("Total price: {}".format(total_price))

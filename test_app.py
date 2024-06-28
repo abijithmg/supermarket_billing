@@ -29,7 +29,7 @@ def test_calculate_total_no_discount(monkeypatch, capsys):
     total = checkout.calculate_total()
     assert total == 100
     captured = capsys.readouterr()
-    assert captured.out.strip == 100
+    assert captured.out.strip() == ''
 
 def test_calculate_total_with_discount(monkeypatch, capsys):
     monkeypatch.setattr('sys.stdin', open('/dev/null'))
@@ -40,7 +40,7 @@ def test_calculate_total_with_discount(monkeypatch, capsys):
     total = checkout.calculate_total()
     assert total == 130
     captured = capsys.readouterr()
-    assert captured.out.strip == 130
+    assert captured.out.strip() == ''
 
 def test_calculate_total_with_bulk_discount(monkeypatch, capsys):
     monkeypatch.setattr('sys.stdin', open('/dev/null'))
@@ -51,7 +51,7 @@ def test_calculate_total_with_bulk_discount(monkeypatch, capsys):
     total = checkout.calculate_total()
     assert total == 75
     captured = capsys.readouterr()
-    assert captured.out.strip == 130
+    assert captured.out.strip() == ''
 
 def test_calculate_total_with_mixed_items(monkeypatch, capsys):
     monkeypatch.setattr('sys.stdin', open('/dev/null'))
@@ -64,7 +64,7 @@ def test_calculate_total_with_mixed_items(monkeypatch, capsys):
     total = checkout.calculate_total()
     assert total == 165
     captured = capsys.readouterr()
-    assert captured.out.strip == 165
+    assert captured.out.strip() == ''
 
 def test_calculate_total_with_empty_cart(monkeypatch, capsys):
     monkeypatch.setattr('sys.stdin', open('/dev/null'))
@@ -72,4 +72,4 @@ def test_calculate_total_with_empty_cart(monkeypatch, capsys):
     total = checkout.calculate_total()
     assert total == 0
     captured = capsys.readouterr()
-    assert captured.out.strip == 0
+    assert captured.out.strip() == ''
