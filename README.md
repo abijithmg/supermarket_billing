@@ -1,7 +1,3 @@
-# Agrichain Assignment
-
-This repository contains the code for the Agrichain assignment. The assignment aims to implement a blockchain-based solution for the agricultural supply chain.
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -12,25 +8,35 @@ This repository contains the code for the Agrichain assignment. The assignment a
 
 ## Introduction
 
-The Agrichain assignment focuses on creating a transparent and secure supply chain solution for the agricultural industry. By leveraging blockchain technology, we can ensure the traceability and authenticity of agricultural products from farm to consumer.
+Simulation of Simple Super Market billing with group discount offers
 
 ## Installation
 
 To install and run this project, follow these steps:
 
-1. Clone the repository: `git clone https://github.com/abigopal/agrichain-assignment.git`
-2. Install the required dependencies: `pip install -r requirements.txt`
-[Optionals]3. Configure the database connection in `config.py`
-4. Run the application: `python app.py`
+1. Clone the repository: `git clone https://github.com/abijithmg/supermarket_billing.git`
+2. Install pytest `pip install pytest`
+3. Run the application: `python app.py`
+In case you want to run via docker
+1. Install the required dependencies: `brew install --cask docker` or docker desktop
+2. Make sure Docker Daemon is running `docker ps`
+3. From the project folder, to create build `docker build -t sm-billing .`
+4. In order to run the actual program `docker run -t -i sm-billing`
+
+## Unit Testing
+
+1. Make sure pytest is installed 
+2. Comment the last line: print(f"Total price: {total_price}")
+2. From project folder run `pytest`
 
 ## Usage
 
 Once the application is up and running, you can perform the following actions:
 
-- Register as a farmer, distributor, or consumer
-- Add new products to the blockchain
-- Track the journey of a product through the supply chain
-- Verify the authenticity of a product
+Enter the items in the cart [Example: A, AB, CDBA, AAA, BAB etc]:
+Sample Input- BAB
+Sample Output- Total price: 95
+
 
 ## Contributing
 
