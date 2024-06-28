@@ -34,7 +34,9 @@ In case you want to run via docker
 Once the application is up and running, you can perform the following actions:
 
 Enter the items in the cart [Example: A, AB, CDBA, AAA, BAB etc]:
+
 Sample Input- BAB
+
 Sample Output- Total price: 95
 
 
